@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TweeTech | Premium Web Solutions</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-dark">
+
+    <!-- 3D Animated Background -->
+    <div class="animated-bg">
+        <div class="cube cube-1"></div>
+        <div class="cube cube-2"></div>
+        <div class="cube cube-3"></div>
+        <div class="cube cube-4"></div>
+        <div class="cube cube-5"></div>
+        <div class="cube cube-6"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-banner" class="toast hidden">
+        <div class="toast-icon">
+            <i data-lucide="check"></i>
+        </div>
+        <div class="toast-content">
+            <h5>Locked In!</h5>
+            <p>Our engineering leads are reviewing details.</p>
+        </div>
+        <button onclick="hideToast()" class="toast-close">×</button>
+    </div>
+
+    <!-- Navbar -->
+    <header id="navbar-header" class="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <div class="brand" onclick="showPage('home')">
+                <div class="logo-wrapper">
+                    <img src="tweetechlogo.png" alt="TweeTech Logo" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">Twee<span>Tech</span></span>
+                    <span class="brand-subtitle">Tech AI Innovate</span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <button onclick="showPage('home')" class="nav-btn active">Home</button>
+                <button onclick="showPage('services')" class="nav-btn">Services</button>
+                <button onclick="showPage('projects')" class="nav-btn">Our Projects</button>
+                <button onclick="showPage('before-after')" class="nav-btn">Compare</button>
+                <button onclick="showPage('how-it-works')" class="nav-btn">Process</button>
+                <button onclick="showPage('about')" class="nav-btn">About & FAQs</button>
+                <button onclick="showPage('terms')" class="nav-btn">T&C</button>
+            </nav>
+
+            <!-- Quick Actions -->
+            <div class="nav-actions">
+                <button onclick="scrollToEnquiry()" class="btn btn-primary">
+                    <i data-lucide="message-square"></i> Enquire Now
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="mobile-menu-btn">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <button onclick="showPage('home')" class="mobile-nav-btn active">Home</button>
+        <button onclick="showPage('services')" class="mobile-nav-btn">Services</button>
+        <button onclick="showPage('projects')" class="mobile-nav-btn">Our Projects</button>
+        <button onclick="showPage('before-after')" class="mobile-nav-btn">Compare</button>
+        <button onclick="showPage('how-it-works')" class="mobile-nav-btn">Process</button>
+        <button onclick="showPage('about')" class="mobile-nav-btn">About & FAQs</button>
+        <button onclick="showPage('terms')" class="mobile-nav-btn">Terms & Conditions</button>
+        <button onclick="scrollToEnquiry()" class="btn btn-primary w-full mt-4">
+            <i data-lucide="message-square"></i> Enquire Now
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page: Home -->
+        <div id="page-home" class="page">
+
+            <!-- Hero Section -->
+            <section id="hero" class="hero section-padding">
+                <div class="hero-bg-fx">
+                    <div class="glow-orb orb-1"></div>
+                    <div class="glow-orb orb-2"></div>
+                </div>
+
+                <div class="container hero-container">
+                    <div class="hero-text-content reveal-3d">
+                        <div class="badge badge-yellow">
+                            <i data-lucide="trending-up"></i>
+                            <span>BESPOKE DIGITAL EXPERIENCES</span>
+                        </div>
+                        <h1 class="hero-title">Custom Websites<br>That Look <span class="blue-gradient">Premium</span>
+                        </h1>
+                        <p class="hero-description">We build simple, gorgeous, and highly-performant websites for
+                            businesses, creators, and modern startups. Get a stunning, professional look with
+                            uncompromising quality.</p>
+
+                        <div class="hero-buttons">
+                            <button onclick="scrollToEnquiry()" class="btn btn-primary btn-large">
+                                <i data-lucide="sparkles"></i> Start Your Project
+                            </button>
+                            <button onclick="showPage('services')" class="btn btn-secondary btn-large">
+                                Explore Our Services <i data-lucide="external-link"></i>
+                            </button>
+                        </div>
+
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <div class="badge-icon"><i data-lucide="star"></i></div>
+                                <div class="badge-text">
+                                    <span>Quality Assured</span>
+                                    <strong>Premium Design</strong>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="badge-icon"><i data-lucide="check-circle"></i></div>
+                                <div class="badge-text">
+                                    <span>Express Build</span>
+                                    <strong>Fast Delivery</strong>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="badge-icon"><i data-lucide="smartphone"></i></div>
+                                <div class="badge-text">
+                                    <span>Layout standard</span>
+                                    <strong>100% Responsive</strong>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <div class="badge-icon"><i data-lucide="shield"></i></div>
+                                <div class="badge-text">
+                                    <span>Direct Chat</span>
+                                    <strong>WhatsApp CRM</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual reveal-3d text-center">
+                        <div class="hero-floating-logo">
+                            <img src="tweetechlogo.png" alt="TweeTech Logo Large" class="hero-logo-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section id="why-us" class="why-us section-padding">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-blue">
+                            <i data-lucide="star"></i>
+                            <span>THE STARTUP ADVANTAGE</span>
+                        </div>
+                        <h2>Why Startups Prefer TweeTech</h2>
+                        <p>Traditional corporate agencies are slow. See how we deliver ultra-premium design results at
+                            lightning speeds.</p>
+                    </div>
+
+                    <div class="comparison-card reveal-3d">
+                        <div class="comparison-header">
+                            <div class="comp-col comp-feature">PROS AND CONS<br><strong>Deliverable Core
+                                    Standard</strong></div>
+                            <div class="comp-col comp-old">
+                                <i data-lucide="shield-alert"></i>
+                                <div><span>TRADITIONAL AGENCIES</span><br><strong>The Slow Bloated Way</strong></div>
+                            </div>
+                            <div class="comp-col comp-new">
+                                <i data-lucide="shield-check"></i>
+                                <div><span>TWEETECH FORMULA</span><br><strong>Agile & PREMIUM</strong></div>
+                            </div>
+                        </div>
+                        <div class="comparison-body" id="comparison-rows">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WhatsApp Enquiry Section -->
+            <section id="enquiry-section" class="enquiry-section section-padding">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-yellow">
+                            <i data-lucide="message-circle"></i>
+                            <span>DIRECT WHATSAPP ENQUIRY</span>
+                        </div>
+                        <h2>Ready to Elevate Your Brand?</h2>
+                        <p>Fill in your details and we'll connect with you instantly on WhatsApp. Our team responds
+                            within minutes!</p>
+                    </div>
+
+                    <div class="enquiry-container reveal-3d">
+                        <div class="card form-card" style="max-width: 700px; margin: 0 auto;">
+
+                            <!-- Automated Reply shown after submit -->
+                            <div id="wa-success" class="hidden">
+                                <div style="text-align:center; padding: 2rem 0 1.5rem;">
+                                    <div
+                                        style="width:80px;height:80px;background:rgba(255,204,0,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;box-shadow:0 0 30px rgba(255,204,0,0.3);">
+                                        <i data-lucide="check-circle-2"
+                                            style="color:var(--clr-yellow); width:40px; height:40px;"></i>
+                                    </div>
+                                    <h4 style="color:var(--clr-yellow); margin-bottom:0.5rem; font-size:1.5rem;">Enquiry
+                                        Sent Successfully!</h4>
+                                    <p style="color:var(--clr-text-muted); font-size:0.95rem;">Opening WhatsApp for you
+                                        now...</p>
+                                </div>
+
+                                <div
+                                    style="background:rgba(0,33,71,0.8); padding:2rem; border-radius:12px; border:2px solid rgba(255,204,0,0.4); border-left:6px solid var(--clr-yellow); margin-bottom:1.5rem;">
+                                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+                                        <div
+                                            style="width:40px;height:40px;background:var(--clr-yellow);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                            <i data-lucide="bot"
+                                                style="color:var(--clr-dark-blue);width:22px;height:22px;"></i>
+                                        </div>
+                                        <div>
+                                            <p
+                                                style="color:var(--clr-yellow);font-weight:800;font-size:0.9rem;margin:0;">
+                                                TweeTech Automated Reply</p>
+                                            <p style="color:var(--clr-text-muted);font-size:0.75rem;margin:0;">Just now
+                                                &middot; Automated System</p>
+                                        </div>
+                                    </div>
+                                    <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:1.25rem;">
+                                        <p style="font-size:1rem;color:var(--clr-white);line-height:1.9;margin:0;">
+                                            &#128075; Hi <strong style="color:var(--clr-yellow);"><span
+                                                    id="wa-client-name"></span></strong>,<br><br>
+                                            Thank you for reaching out to <strong>TweeTech Agency</strong>!
+                                            &#127775;<br><br>
+                                            We have received your project enquiry and our team will contact you on
+                                            WhatsApp at <strong style="color:var(--clr-yellow);"><span
+                                                    id="wa-client-phone"></span></strong> very shortly.<br><br>
+                                            We typically respond within <strong
+                                                style="color:var(--clr-yellow);">15&ndash;30 minutes</strong> during
+                                            business hours (Mon&ndash;Sat, 9 AM &ndash; 8 PM IST).<br><br>
+                                            We look forward to bringing your vision to life! &#128640;<br><br>
+                                            <em style="color:var(--clr-text-muted);font-size:0.9rem;">&mdash; The
+                                                TweeTech Team</em>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button onclick="resetEnquiryForm()" class="btn btn-secondary w-full">Send Another
+                                    Enquiry</button>
+                            </div>
+
+                            <!-- Enquiry Form -->
+                            <form id="wa-enquiry-form" class="stacked-form">
+                                <div class="form-grid-2">
+                                    <div class="input-group">
+                                        <label>Your Full Name *</label>
+                                        <input type="text" id="wa-name" required placeholder="e.g., Rahul Sharma">
+                                    </div>
+                                    <div class="input-group">
+                                        <label>WhatsApp Number *</label>
+                                        <input type="tel" id="wa-phone" required placeholder="e.g., +91 98765 43210">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label>Project Details / Enquiry *</label>
+                                    <textarea id="wa-message" rows="5" required
+                                        placeholder="Tell us about the website or design you'd like to build. Include any references, budget range, or timeline..."></textarea>
+                                </div>
+
+                                <div
+                                    style="margin-bottom: 1.5rem; background:rgba(0,0,0,0.3); padding:1rem; border-radius:8px; border:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem; align-items:flex-start;">
+                                    <input type="checkbox" id="wa-terms" required
+                                        style="width:20px; height:20px; margin-top:0.25rem; accent-color:var(--clr-yellow); flex-shrink:0;">
+                                    <label for="wa-terms"
+                                        style="font-size:0.85rem; line-height:1.6; color:var(--clr-text); margin:0;">
+                                        I have read and agree to the <button type="button" onclick="showPage('terms')"
+                                            style="color:var(--clr-yellow);font-weight:bold;text-decoration:underline;background:none;border:none;cursor:pointer;font-size:0.85rem;padding:0;">TweeTech
+                                            Terms &amp; Conditions</button>. I understand TweeTech provides customized
+                                        digital solutions including AI Integration and Web Development, and I agree to
+                                        use all solutions ethically and legally.
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-whatsapp w-full btn-large">
+                                    <i data-lucide="message-circle"></i> Send Enquiry via WhatsApp
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page: Services -->
+        <div id="page-services" class="page hidden">
+            <section class="services section-padding">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-blue">
+                            <i data-lucide="sparkles"></i>
+                            <span>BESPOKE DIGITAL FORMATS</span>
+                        </div>
+                        <h2>Our Elite Digital Services</h2>
+                        <p>Get extreme fast delivery & absolute premium-tier design files. We assemble state-of-the-art
+                            pipelines to turn your startup dreams into reality.</p>
+                    </div>
+                    <div id="services-grid" class="services-grid"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page: Projects -->
+        <div id="page-projects" class="page hidden">
+            <!-- Private Projects Section -->
+            <section class="projects-section section-padding">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-yellow">
+                            <i data-lucide="lock"></i>
+                            <span>EXCLUSIVE DESIGNS</span>
+                        </div>
+                        <h2>Private Projects</h2>
+                        <p>Sneak peek into our exclusive custom-built internal applications and enterprise portals.</p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card reveal-3d">
+                            <div class="project-img-wrapper">
+                                <img src="beautiful mind.jpeg" alt="A Beautiful Mind Clinic" class="project-img"
+                                    onerror="this.src='https://placehold.co/800x500/1e293b/ffffff?text=A+Beautiful+Mind+Clinic'">
+                            </div>
+                            <div class="project-content">
+                                <h3>A Beautiful Mind Clinic</h3>
+                                <p>Comprehensive clinic management and patient desk software tailored for specialized
+                                    medical practitioners.</p>
+                            </div>
+                        </div>
+                        <div class="project-card reveal-3d">
+                            <div class="project-img-wrapper">
+                                <img src="expo.png" alt="Shreenathji Agri Expo ERP" class="project-img"
+                                    onerror="this.src='https://placehold.co/800x500/1e293b/ffffff?text=Shreenathji+Agri+Expo+ERP'">
+                            </div>
+                            <div class="project-content">
+                                <h3>Shreenathji Agri Expo ERP</h3>
+                                <p>Enterprise-grade portal managing internal workflows, roles, and automated data
+                                    processing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Projects Section -->
+            <section class="projects-section section-padding" style="background: rgba(0, 33, 71, 0.3);">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-blue">
+                            <i data-lucide="globe"></i>
+                            <span>LIVE IN PRODUCTION</span>
+                        </div>
+                        <h2>Live Projects</h2>
+                        <p>Explore some of our recent high-performance websites deployed for our amazing clients.</p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <a href="https://foxbyte-lng5.vercel.app/" target="_blank"
+                            class="project-card reveal-3d live-project">
+                            <div class="project-img-wrapper">
+                                <img src="tagline.png" alt="FoxByte" class="project-img">
+                                <div class="live-badge"><i data-lucide="external-link"></i> View Live</div>
+                            </div>
+                            <div class="project-content">
+                                <h3>FoxByte Platform</h3>
+                                <p>Modern web application deployed with exceptional performance metrics.</p>
+                            </div>
+                        </a>
+                        <a href="https://t-4-1.onrender.com/?trk=public_post-text" target="_blank"
+                            class="project-card reveal-3d live-project">
+                            <div class="project-img-wrapper">
+                                <img src="job.png" alt="T-4-1 Portal" class="project-img">
+                                <div class="live-badge"><i data-lucide="external-link"></i> View Live</div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Career Connect Job Search Platform</h3>
+                                <p>Interactive digital experience delivering custom business logic and workflows.</p>
+                            </div>
+                        </a>
+                        <a href="https://portfolio-xke7.vercel.app/" target="_blank"
+                            class="project-card reveal-3d live-project">
+                            <div class="project-img-wrapper">
+                                <img src="https://placehold.co/800x500/0f172a/38bdf8?text=Premium+Portfolio"
+                                    alt="Portfolio" class="project-img">
+                                <div class="live-badge"><i data-lucide="external-link"></i> View Live</div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Premium Portfolio</h3>
+                                <p>Sleek, highly performant personal portfolio with cutting-edge visual aesthetic.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page: Compare -->
+        <div id="page-before-after" class="page hidden">
+            <section class="compare section-padding">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-blue">
+                            <i data-lucide="sparkles"></i>
+                            <span>Brand Redesign Transformation</span>
+                        </div>
+                        <h2>Outdated Websites vs. TweeTech Magic</h2>
+                        <p>Slide the bar left and right to see how we turn old, slow websites into super clean, modern
+                            pages that load instantly.</p>
+                    </div>
+
+                    <div id="slider-root" class="slider-root reveal-3d">
+                        <div class="slider-labels">
+                            <span class="label-old"><i data-lucide="alert-circle"></i> Slow Old Style</span>
+                            <span class="label-new"><i data-lucide="check-circle-2"></i> TweeTech Easy Style</span>
+                        </div>
+                        <div id="before-after-container" class="before-after-container">
+                            <!-- Before Layer -->
+                            <div class="slider-layer before-layer">
+                                <div class="old-website-mockup">
+                                    <div class="old-warning">!!! WELCOME TO THE OLD SLOW PORTAL !!! BEST VIEW IN 800x600
+                                        !!!</div>
+                                    <div class="old-header">
+                                        <span>🌐 MY-OLD-SITE-v1</span>
+                                        <span>Hits: 004812</span>
+                                    </div>
+                                    <h3>Our Business Consulting & Web Development</h3>
+                                    <p>We take months to design standard pages. The layout is cluttered and might break
+                                        on mobile phones.</p>
+                                    <div class="old-features">
+                                        <div class="old-box slow">Slow Loading</div>
+                                        <div class="old-box mobile">Looks Bad on Phone</div>
+                                        <div class="old-box cost">Confusing Flow</div>
+                                    </div>
+                                    <button class="old-btn">CLICK TO SUBMIT MANUALLY!</button>
+                                </div>
+                            </div>
+
+                            <!-- After Layer -->
+                            <div id="after-layer" class="slider-layer after-layer" style="width: 50%;">
+                                <div id="after-content" class="after-content" style="width: 1000px;">
+                                    <div class="new-website-mockup">
+                                        <div class="new-header">
+                                            <div class="new-brand">
+                                                <div class="tweetechlogo"></div> TweeTech
+                                            </div>
+                                            <div class="new-speed-badge">LOADS IN 1 SECOND</div>
+                                        </div>
+                                        <h2>Get More Customers With A Beautiful Custom Website</h2>
+                                        <p>A beautiful, modern online page that works perfectly on phones. It loads
+                                            instantly and explains your services so clearly that visitors love to
+                                            contact you.</p>
+                                        <div class="new-features">
+                                            <div class="new-box"><span>LOAD SPEED</span>
+                                                <h4>Under 1 Sec</h4>
+                                            </div>
+                                            <div class="new-box"><span>QUALITY</span>
+                                                <h4>Premium Output</h4>
+                                            </div>
+                                            <div class="new-box"><span>SUPPORT</span>
+                                                <h4>1 Year Free</h4>
+                                            </div>
+                                        </div>
+                                        <button onclick="scrollToEnquiry()" class="btn btn-primary mt-4">Enquire
+                                            Now</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Handle -->
+                            <div id="slider-handle" class="slider-handle" style="left: 50%;">
+                                <div class="handle-btn"><i data-lucide="arrow-left-right"></i></div>
+                            </div>
+                        </div>
+                        <p class="slider-instruction">➔ Drag the circle button left & right to view layout details ➔</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page: Process -->
+        <div id="page-how-it-works" class="page hidden">
+            <section class="process section-padding">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-yellow">
+                            <i data-lucide="sparkles"></i>
+                            <span>OUR LEAN PRODUCTION SLA</span>
+                        </div>
+                        <h2>How Simple It Works</h2>
+                        <p>We've engineered unnecessary agency delays out of our pipelines. Watch your business layout
+                            launch in six linear steps.</p>
+                    </div>
+                    <div id="timeline-grid" class="timeline-grid reveal-3d"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page: About -->
+        <div id="page-about" class="page hidden">
+            <section class="about section-padding">
+                <div class="container">
+                    <div class="about-grid"
+                        style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto; text-align: center;">
+                        <div class="about-content reveal-3d">
+                            <div class="badge badge-blue">
+                                <i data-lucide="rocket"></i>
+                                <span>OUR MISSION & IDENTITY</span>
+                            </div>
+                            <h2>Every Business Deserves <span class="text-gradient">Great Design.</span></h2>
+                            <p>We believe that you shouldn't have to compromise on quality to get a stunning digital
+                                presence. We built TweeTech to deliver premium web assets at speeds and quality
+                                standards that empower startups to succeed globally.</p>
+                            <ul class="about-features" style="text-align: left; margin-top: 3rem;">
+                                <li>
+                                    <i data-lucide="check-circle" class="text-green"></i>
+                                    <div>
+                                        <h4>Elite Pixel-Perfect Precision</h4>
+                                        <p>We write actual responsive code, rejecting slow and heavy template builders.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i data-lucide="check-circle" class="text-green"></i>
+                                    <div>
+                                        <h4>Absolute Transparency</h4>
+                                        <p>You always know what you are getting. Zero surprises, completely honest
+                                            delivery.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i data-lucide="check-circle" class="text-green"></i>
+                                    <div>
+                                        <h4>WhatsApp Collaborative Flow</h4>
+                                        <p>Reach our lead developers on standard WhatsApp. No automated tickets.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faqs section-padding">
+                <div class="container">
+                    <div class="section-header text-center reveal-3d">
+                        <div class="badge badge-blue">
+                            <i data-lucide="help-circle"></i>
+                            <span>GOT ENQUIRIES?</span>
+                        </div>
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+                    <div class="faq-categories reveal-3d" id="faq-categories">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="faq-accordion reveal-3d" id="faq-accordion">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page: Terms & Conditions -->
+        <div id="page-terms" class="page hidden">
+            <section class="terms-page section-padding">
+                <div class="container" style="max-width: 860px; margin: 0 auto;">
+                    <div class="section-header text-center reveal-3d" style="margin-bottom: 4rem;">
+                        <div class="badge badge-yellow"><i data-lucide="file-text"></i> <span>LEGAL DOCUMENT</span>
+                        </div>
+                        <h2>Terms &amp; Conditions</h2>
+                        <p>Please read these terms carefully before engaging with TweeTech's services.</p>
+
+                    </div>
+
+                    <div class="terms-body reveal-3d">
+                        <div class="terms-section">
+                            <h3><span class="terms-num">01</span> Acceptance of Terms</h3>
+                            <p>By engaging with TweeTech Agency's services — whether through our website, WhatsApp,
+                                email, or any other channel — you confirm that you have read, understood, and agree to
+                                be legally bound by these Terms &amp; Conditions. If you do not agree, please do not
+                                proceed with any service engagement.</p>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">02</span> Services Provided</h3>
+                            <p>TweeTech Agency provides the following digital services:</p>
+                            <ul class="terms-list">
+                                <li>Custom Website Design &amp; Development</li>
+                                <li>Landing Page &amp; Single Page Application (SPA) Development</li>
+                                <li>Dashboard UI/UX Design</li>
+                                <li>AI Integration &amp; AI-Powered Solutions</li>
+                                <li>Visitor &amp; Lead Generation Tools</li>
+                                <li>Graphic Design (Posters, Thumbnails, Banners)</li>
+                            </ul>
+                            <p>All services are delivered digitally. No physical products are provided unless explicitly
+                                agreed upon in a separate written agreement.</p>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">03</span> Client Responsibilities</h3>
+                            <p>As a client of TweeTech Agency, you agree to:</p>
+                            <ul class="terms-list">
+                                <li>Provide accurate and complete information required to deliver your project.</li>
+                                <li>Communicate revisions or feedback within the agreed timeline.</li>
+                                <li>A maximum of 3 changes (revisions) to the website will be allowed.</li>
+                                <li>Use all delivered solutions (including AI tools, websites, and graphics) for
+                                    <strong>lawful and ethical purposes only</strong>.
+                                </li>
+                                <li>Not use TweeTech's work to promote illegal activities, hate speech, misinformation,
+                                    or any content that violates applicable laws.</li>
+                                <li>Obtain necessary licenses, permissions, or rights for any third-party content you
+                                    provide to us.</li>
+                            </ul>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">04</span> Payments &amp; Refunds</h3>
+                            <ul class="terms-list">
+                                <li>All project rates are agreed upon before work begins and confirmed in writing via
+                                    WhatsApp or email.</li>
+                                <li>A minimum advance payment (typically 50%) is required before any work commences.
+                                </li>
+                                <li>Refunds are not provided once design or development work has been initiated, except
+                                    in cases of proven failure to deliver agreed deliverables.</li>
+                                <li>Final deliverables are released only upon receipt of full payment.</li>
+                            </ul>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">05</span> Intellectual Property</h3>
+                            <ul class="terms-list">
+                                <li>Upon full payment, the client receives full ownership of the final delivered design
+                                    and code.</li>
+                                <li>TweeTech retains the right to showcase completed work in its portfolio unless the
+                                    client requests confidentiality in writing.</li>
+                                <li>All source files and reusable components developed by TweeTech remain TweeTech's
+                                    intellectual property unless explicitly transferred via a separate agreement.</li>
+                            </ul>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">06</span> AI Integration &amp; Ethical Use</h3>
+                            <p>If your project involves AI Integration or AI-Powered Tools, you additionally agree that:
+                            </p>
+                            <ul class="terms-list">
+                                <li>You will not deploy AI solutions for surveillance, mass data collection without
+                                    consent, or to cause harm to individuals or groups.</li>
+                                <li>You are solely responsible for the output, accuracy, and ethical implications of AI
+                                    tools integrated into your platform.</li>
+                                <li>TweeTech is not liable for any decisions made by AI systems deployed through our
+                                    integrations.</li>
+                                <li>You will comply with all applicable data privacy laws (such as GDPR, DPDP Act, etc.)
+                                    when collecting or processing user data through AI systems.</li>
+                            </ul>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">07</span> Confidentiality</h3>
+                            <p>Both parties agree to keep confidential any sensitive business information shared during
+                                the engagement. TweeTech will not disclose your project details, business model, or data
+                                to any third party without your consent.</p>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">08</span> Limitation of Liability</h3>
+                            <p>TweeTech Agency's liability is limited to the total amount paid by the client for the
+                                specific project in question. We are not responsible for indirect losses, loss of
+                                business revenue, or damages resulting from the use or inability to use delivered
+                                products.</p>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">09</span> Termination</h3>
+                            <p>Either party may terminate a project engagement with 7 days written notice. In such
+                                cases, payment is due for all work completed up to the termination date. No refund will
+                                be provided for work already delivered.</p>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">10</span> Governing Law</h3>
+                            <p>These Terms &amp; Conditions shall be governed by and construed in accordance with the
+                                laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts
+                                in India.</p>
+                        </div>
+
+                        <div class="terms-section">
+                            <h3><span class="terms-num">11</span> Contact Us</h3>
+                            <p>For any questions regarding these Terms, please contact us via:</p>
+                            <ul class="terms-list">
+                                <li>Email: <a href="mailto:tweetech08@gmail.com"
+                                        style="color:var(--clr-yellow);">tweetech08@gmail.com</a></li>
+                                <li>WhatsApp: <a href="https://wa.me/917016253913" style="color:var(--clr-yellow);">+91
+                                        +91 70162 53913</a></li>
+                                <li>Instagram: <a
+                                        href="https://www.instagram.com/twee__tech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                        target="_blank" style="color:var(--clr-yellow);">@twee__tech</a></li>
+                                <li>LinkedIn: <a href="https://linkedin.com/company/tweetech" target="_blank"
+                                        style="color:var(--clr-yellow);">linkedin.com/company/tweetech</a></li>
+                            </ul>
+                        </div>
+
+                        <div style="text-align:center; margin-top: 3rem;">
+                            <button onclick="scrollToEnquiry()" class="btn btn-primary btn-large">I Agree — Start My
+                                Project &#128640;</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Submissions Queue -->
+    <section id="submissions-queue" class="submissions-queue hidden">
+        <div class="container">
+            <h4><i data-lucide="terminal"></i> Active Local Requests Queue (<span id="sub-count">0</span>)</h4>
+            <div id="submissions-list" class="submissions-list"></div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta section-padding text-center">
+        <div class="container reveal-3d">
+            <div class="badge badge-blue"><i data-lucide="sparkles"></i> RESERVE YOUR QUEUE TODAY</div>
+            <h2>Ready to Build Something Amazing?</h2>
+            <div class="cta-buttons" style="justify-content: center;">
+                <button onclick="scrollToEnquiry()" class="btn btn-primary btn-large">🚀 Start Your Project</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <img src="tweetechlogo.png" alt="Logo">
+                        <span>TweeTech</span>
+                    </div>
+                    <p>Uncompromising premium digital design and performance codebases tailored specifically for modern
+                        startups.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/twee__tech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" title="Instagram"><img
+                                src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="instagram-new--v1"
+                                border="0"></a>
+
+                        <a href="mailto:tweetech08@gmail.com" title="Email"><i data-lucide="mail"></i></a>
+                        <a href="https://wa.me/917016253913" target="_blank" title="WhatsApp"><i
+                                data-lucide="message-square"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>OUR SERVICES</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('services')">Website Development</a></li>
+                        <li><a href="#" onclick="showPage('services')">Landing Pages Layouts</a></li>
+                        <li><a href="#" onclick="showPage('services')">Dashboard UI Mockups</a></li>
+                        <li><a href="#" onclick="showPage('services')">YouTube Video Thumbnails</a></li>
+                        <li><a href="#" onclick="showPage('services')">Banners & Posters Graphics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="#" onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to Top</a></li>
+                        <li><a href="#" onclick="showPage('services')">Elite Services</a></li>
+                        <li><a href="#" onclick="showPage('before-after')">Real-Time Redesign</a></li>
+                        <li><a href="#" onclick="showPage('about')">Why Choose Us & FAQs</a></li>
+                        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter-col">
+                    <h4>DESIGN INSIGHTS WEEKLY</h4>
+                    <p>Get premium startup layout templates and checklist guides directly in your inbox.</p>
+                    <form id="footer-newsletter" class="newsletter-form">
+                        <input type="email" required placeholder="founder@studio.co">
+                        <button type="submit"><i data-lucide="send"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TweeTech. All rights reserved. | <a href="#" onclick="showPage('terms')"
+                        style="text-decoration: underline; color: var(--clr-yellow);">Terms &amp; Conditions</a></p>
+                <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="back-to-top">Back to top <i
+                        data-lucide="arrow-up"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
